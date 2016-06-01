@@ -1,0 +1,33 @@
+extends layout
+block content
+
+    div.post
+        h2
+            a(href="/post/" + post._id)= post.name
+        span= post.user.username
+        p= post.description
+        if post.image
+            img.post_image(src='/media/' + post.image)
+
+        if user && post.user.username == user.username
+            p
+                a(href='/post-edit/' + post._id) edit
+                form(action='/post/' + post._id + '/delete/', method='post')
+                    input(type='submit' value="Delete")
+                //a(href='/post/' + post._id + '/delete/') Delete
+        if user
+            p
+                div
+                    |Add Comment
+                    form(action='/post/' + post._id + '/add-comment/' method='post')
+                        p
+                            textarea(name='text', cols=50, rows=5)
+                        p
+                            input(type='submit')
+        if comments
+            for comment in comments
+                div.comment
+                    p= comment.user.username
+                    p= comment.date
+                    h3
+                        p= comment.text

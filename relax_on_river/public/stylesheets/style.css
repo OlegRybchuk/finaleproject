@@ -1,0 +1,111 @@
+body{
+  background-color: lightblue;
+  background-image: url("../images/images1.jpg");
+  background-attachment: fixed;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+}
+
+div.container {
+    width: 100%;
+    margin: 0px;
+    border: 1px solid gray;
+    line-height: 150%;
+}
+
+div.header, div.footer {
+    //position: fixed;
+    text-align: center;
+    padding: 0.5em;
+    color: white;
+    background-color: gray;
+    clear: left;
+}
+
+h1.header {
+    padding: 0;
+    margin: 0;
+}
+
+div.left {
+    position: fixed;
+    float: left;
+    width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+div.content {
+    margin-left: 190px;
+    border-left: 3px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.uli {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4CAF50;
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.clear {
+    clear: both;
+}
+
+.text{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+.post {
+    width:300px;
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    border-radius: 25px;
+    border: black solid 2px;
+    background: yellow;
+    box-shadow: 10px 10px;
+    padding-bottom:2cm;
+}
+
+img {
+    width: 500px;
+    height: 350px
+    height: auto;
+}
+
+#map-canvas{
+  height: 500px;
+  width: 500px;
+  border: 3px solid black;
+}
+
+.fon1{
+  font-size:150%;
+}
+
+.fon2{
+  font-size:300%;
+  text-align: center;
+}

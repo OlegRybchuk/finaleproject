@@ -1,0 +1,58 @@
+extends layout
+
+block content
+
+  div.container
+    div.header
+      h1.header
+        h1
+          | Південний Буг
+
+    div.left
+      .uli
+        h2
+          li: a(href='/') Home
+          li: a(href='/news') Our News
+          li: a(href='/contact') Contact
+          li: a(href='/about') About
+          p
+
+          h3
+            span Authorization
+          if user
+            p Hello&nbsp
+              = user.username
+            p
+              a(href='/logout') Logout
+          else
+            p
+              form(action='/login', method='post')
+                p
+                  input(name='username', placeholder='Enter Username', required)
+                p
+                  input(name='password', placeholder='Password', required)
+                p
+                  input(type='submit')
+                if login_error
+                  p.form_error= login_error
+            .uli
+              li: a(href='/register') register
+
+    div.content
+      h1 Register Page
+      p.lead Say something worthwhile here.
+      br
+      form(role='form', action="/register",method="post", style='max-width: 300px;')
+        .form-group
+            input.form-control(type='text', name="username", placeholder='Enter Username', required)
+            if error
+              span.form_error= error
+        .form-group
+          input.form-control(type='password', name="password", placeholder='Password', required)
+        button.btn.btn-default(type='submit') Submit
+        &nbsp;
+        a(href='/')
+          button.btn.btn-primary(type="button") Cancel
+
+    div.footer
+      p © Copyright by Refsnes Data.

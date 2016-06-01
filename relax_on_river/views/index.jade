@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  div.container
+    div.header
+      h1.header
+        h1
+          | Південний Буг
+
+    div.left
+      .uli
+        h2
+          li: a(href='/') Home
+          li: a(href='/news') Our News
+          li: a(href='/contact') Contact
+          li: a(href='/about') About
+          p
+
+          h3
+            span Authorization
+          if user
+            p Hello&nbsp
+              = user.username
+            p
+              a(href='/logout') Logout
+          else
+            p
+              form(action='/login', method='post')
+                p
+                  input(name='username', placeholder='Enter Username', required)
+                p
+                  input(name='password', placeholder='Password', required)
+                p
+                  input(type='submit')
+                if login_error
+                  p.form_error= login_error
+            .uli
+              li: a(href='/register') register
+
+    div.content
+      p.fon1
+        Південний Буг, Бог, рідше Біг (дав.-гр. ‛Ύπανις — Гіпаніс, крим. Aqsu — Ак-Су, пол. Boh) —
+        річка на південному заході України. Бере початок на Поділлі і впадає до Бузького лиману
+        Чорного моря.
+      p.fon1
+        Третя за довжиною (після Дніпра та Дністра) річка України і найбільша, яка тече виключно
+        територією України — довжина її 806 км. Протікає центральними і південними областями
+        держави (Хмельницька, Вінницька, Кіровоградська, Одеська та Миколаївська області)
+        через фізико-географічні зони лісостепу і степу. Тут на поверхню виходить найдавніше
+        в Україні геологічне утворення — Український кристалічний щит, завдяки якому
+        Південний Буг відомий своїми порогами.
+      p
+        h4.fon1
+          Регеструйтесь і ви зможете коментувати вподобовані вами знімки, а також завантажувати
+          свої фото і ділитися гарними місцями для відпочинку!
+      p
+        h3.fon1
+          Для перегляду натисніть our news
+
+
+
+    div.footer
+      p © Copyright by Referend Data.
